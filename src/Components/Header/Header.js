@@ -8,7 +8,10 @@ function Header() {
                 <div className="header_titleSmall">React & Node</div>
                 <div className="header_titleLarge">Blog</div>
             </div>
-            <img  className="header__Img" src="https://images.pexels.com/photos/1167355/pexels-photo-1167355.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+            <img  
+                className="header__Img" 
+                src="https://miro.medium.com/max/1152/1*l5YM5LclSzYvyzqJizkcpg.png" 
+                alt="" />
         </div>
     )
 }
