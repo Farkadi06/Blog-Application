@@ -1,3 +1,10 @@
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
 import HomeScreen from "./Screens/HomeScreen/HomeScreen";
 import Login from "./Screens/Login/Login";
@@ -8,10 +15,29 @@ import Write from "./Screens/Write/Write";
 
 function App() {
   return (
-    <div className="App">
+    <Router>
         <Navbar/>
-        <Register/>
-    </div>
+        <Switch>
+          <Route exact path="/">
+            <HomeScreen/>
+          </Route>
+          <Route path="/register">
+            <Register/>
+          </Route>
+          <Route path="/login">
+            <Login/>
+          </Route>
+          <Route path="/write">
+            <Write/>
+          </Route>
+          <Route path="/settings">
+            <Settings/>
+          </Route>
+          <Route path="/post/:postId">
+            <Single/>
+          </Route>
+        </Switch>
+    </Router>
   );
 }
 
