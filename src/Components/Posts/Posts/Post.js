@@ -17,7 +17,7 @@ function Post({post}) {
                 <div className="post__colletions">
                     <ul className="post__colletion">
                        {post.categories.map((c) => (
-                           <li>{c    }</li>
+                           <li>{c}</li>
                        ))}
                     </ul>
                     <p>{new Date(post.createdAt).toDateString()}</p>
