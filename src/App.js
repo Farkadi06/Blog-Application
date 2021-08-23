@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
+import { Context } from "./Context/Context";
 import HomeScreen from "./Screens/HomeScreen/HomeScreen";
 import Login from "./Screens/Login/Login";
 import Register from "./Screens/Register/Register";
@@ -9,7 +10,7 @@ import Single from "./Screens/Single/Single";
 import Write from "./Screens/Write/Write";
 
 function App() {
-  const user = false;
+  const {user} = useContext(Context);
   return (
     <Router>
       <Navbar />
