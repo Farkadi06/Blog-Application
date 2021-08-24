@@ -7,26 +7,26 @@ function SinglePost() {
   const location = useLocation();
   const path = location.pathname.split('/')[2];
   const [post, setPost] = useState({});
+  const PF = "http://localhost:5000/images/"
 
   useEffect(() => {
+    console.log(post.photo)
     const getPost = async ()=> {
         const res = await axios.get("/posts/"+ path);
         setPost(res.data)
     }
-    getPost()
+
+    getPost().then(console.log(PF + post.photo))
   }, [path])
+
+  
   return (
     <div className="SinglePost">
       <div className="singlePostWraper">
-        {/* {post.photo && <img 
+        {post.photo && <img 
                     className="singlePost__img"
-                    src="https://static.stambol.com/wordpress/wp-content/uploads/2021/05/digital-art-metaverse-painting-nft-augmented-reality.jpg"
-                    alt="" />} */}
-        <img
-          src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/nft-1-1614978591.jpg"
-          alt=""
-          className="singlePost__img"
-        />
+                    src={PF + post.photo}
+                    alt="" />}
         <h1 className="singlePostTitle">
           {post.title}
           <div className="singlePostEdit">

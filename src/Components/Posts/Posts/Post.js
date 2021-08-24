@@ -3,17 +3,15 @@ import { Link } from 'react-router-dom'
 import './Post.css'
 
 function Post({post}) {
+
+    const PF = "http://localhost:5000/images/"
     return (
         <>
             <div className="post">
-                {/* {post.photo && <img 
+                {post.photo && <img 
                     className="post__img"
-                    src="https://static.stambol.com/wordpress/wp-content/uploads/2021/05/digital-art-metaverse-painting-nft-augmented-reality.jpg"
-                    alt="" />} */}
-                <img 
-                    className="post__img"
-                    src="https://static.stambol.com/wordpress/wp-content/uploads/2021/05/digital-art-metaverse-painting-nft-augmented-reality.jpg"
-                    alt="" />
+                    src={PF + post.photo}
+                    alt="" />}
                 <div className="post__colletions">
                     <ul className="post__colletion">
                        {post.categories.map((c) => (

@@ -17,7 +17,7 @@ function HomeScreen() {
             console.log(res)
             setPosts(res.data);
         }
-        fetchPosts()
+        fetchPosts().then(console.log(posts , 'dad'))
     }, [search])
     return (
         <>
